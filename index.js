@@ -1,6 +1,6 @@
 const fs = require("fs/promises");
 const path = require("path");
-const InstaPost = require("./bot/insta-bot");
+// const InstaPost = require("./bot/insta-bot");
 const TelPost = require("./bot/tel-bot");
 
 const imagesDir = path.join(__dirname, "data", "photos");
@@ -38,7 +38,7 @@ async function run() {
   console.log(posts);
 
   // await InstaPost(posts);
-  // await TelPost(posts);
+  await TelPost(posts);
 
   moveFiles("./data/photos", "./data/old/photos");
   moveFiles("./data/captions", "./data/old/captions");
